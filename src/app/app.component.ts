@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'sistema-productos-frontend';
+  title = 'Sistema de gestion de productos';
+
+  
 }
