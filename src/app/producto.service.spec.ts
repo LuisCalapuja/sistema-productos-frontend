@@ -42,7 +42,7 @@ describe('ProductoService', () => {
   });
 
   it('registrarProducto should return a newly created producto', (done: DoneFn) => {
-    const newProducto: Producto = { id: 0, nombre: 'Producto Nuevo', categoria: 'Vino semi-seco', marca: 'Tabernero', cantidad: 13 precio: 150 };
+    const newProducto: Producto = { id: 0, nombre: 'Producto Nuevo', categoria: 'Vino semi-seco', marca: 'Tabernero', cantidad: 13, precio: 150 };
     const returnedProducto: Producto = { ...newProducto, id: 3 };
 
     service.registrarProducto(newProducto).subscribe((producto) => {

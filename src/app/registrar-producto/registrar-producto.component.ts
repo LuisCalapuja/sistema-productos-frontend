@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Producto } from '../producto';
 import { ProductoService } from '../producto.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registrar-producto',
@@ -11,7 +12,9 @@ import { Router } from '@angular/router';
 export class RegistrarProductoComponent implements OnInit{
 
   producto: Producto = new Producto();
-  constructor(private productoServicio:ProductoService, private router:Router) {}
+  error: string = ''; // Propiedad para almacenar mensajes de error
+  constructor(private productoServicio:ProductoService, private router:Router) {
+  }
 
   ngOnInit(): void {
   }
@@ -21,8 +24,9 @@ export class RegistrarProductoComponent implements OnInit{
       next: dato => {console.log(dato);
       this.irListaProductos();
     }, 
-    error: (error) => {
-      console.log(error);
+    error: (err) => {
+      console.log(err);
+      this.error = 'Error al registrar el producto'; // Capturar mensaje de error
     }
     });
   }

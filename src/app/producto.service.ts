@@ -23,7 +23,7 @@ export class ProductoService {
     return this.http.post(this.baseURL, producto);
   }
 
-  //actualiza empleado
+  //actualiza producto
   actualizarProducto(id:number,producto:Producto): Observable<Object>{
     return this.http.put(`${this.baseURL}/${id}`,producto);
   }
